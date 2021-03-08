@@ -1,0 +1,57 @@
+<MyLayout>
+    orientation: 'vertical'
+    padding: 10
+    spacing:10
+
+    BoxLayout:
+        orientation: 'horizontal'
+        padding: 5
+        spacing:5
+        Label:
+            text:"Enter the Word To Test"
+            font_size: 25
+            size_hint: (0.5,0.2) 
+        TextInput:
+            id:word
+            font_size: 25
+            multiline:False
+            size_hint: (0.5,0.2) 
+    Button:
+        id:check_btn
+        text:"Check"
+        font_size: 30
+        size_hint: (0.2,0.2)
+        pos_hint: {'center_x':0.5 } 
+        on_press: root.check(word.text)
+
+    BoxLayout:
+        orientation: 'horizontal'
+        padding: 5
+        spacing:5
+        Label:
+            text:"Enter Fragment for Suggestions"
+            font_size: 25
+            size_hint: (0.5,0.2) 
+        TextInput:
+            id:fragment
+            font_size: 25
+            multiline:False
+            size_hint: (0.5,0.2) 
+    
+    Button:
+        id:suggest_btn
+        text:"Suggest Words"
+        font_size: 30
+        size_hint: (0.3,0.2)
+        pos_hint:{"center_x":0.5} 
+        on_press: root.suggest_words(fragment.text)
+    
+    Label:
+        id:result
+        text:""
+        font_size: 25
+        size_hint: (1,0.3)
+        pos_hint:{"center_x":0.5} 
+        
+        color:(0,0,0,1)
+    
